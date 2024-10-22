@@ -1,0 +1,31 @@
+
+spring:
+  application:
+    name: BLOG_SERVICE_REGISTRY
+
+
+server:
+
+  port: 8081
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+    endpoint:
+      health:
+        show-details: always
+
+eureka:
+  server:
+    renewalThresholdUpdateIntervalMs: 5000  # Adjust this based on load
+    evictionIntervalTimerInMs: 60000  # Run eviction tasks less frequently to reduce load
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/
+    instance:
+      prefer-ip-address: true
