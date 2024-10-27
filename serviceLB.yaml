@@ -32,5 +32,5 @@ spec:
     app: blogsite-service-registry-service-loadbalancer
   ports:
     - protocol: TCP
-      port: 80
+      port: 81
       targetPort: 8081
