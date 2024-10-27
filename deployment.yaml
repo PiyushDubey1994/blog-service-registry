@@ -13,24 +13,23 @@ spec:
   template:
     metadata:
       labels:
-        app: blog-site-service-registry
+        app: blogsite-service-registry
     spec:
       containers:
-        - name: blog-site-service-registry
-          image: piyushdubey1994/blog-site-service-registry:tagversion
+        - name: blogsite-service-registry
+          image: piyushdubey1994/blogsite-service-registry:tagversion
           ports:
             - containerPort: 8081
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: blog-site-service-registry
+  name: blogsite-service-registry
 spec:
   type: LoadBalancer
   selector:
-    app: blog-site-service-registry
+    app: blogsite-service-registry
   ports:
     - protocol: TCP
       port: 81
