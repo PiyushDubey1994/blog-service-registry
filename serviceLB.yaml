@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blogsite-api-gateway-deployment-loadbalancer
+  name: blogsite-api-gateway-service-deployment-loadbalancer
   labels:
-    app: blog-site-service-registry-loadbalancer
+    app: blogsite-api-gateway-service-loadbalancer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: blog-site-service-registry-loadbalancer
+      app: blogsite-api-gateway-service-loadbalancer
   template:
     metadata:
       labels:
-        app: blog-site-service-registry-loadbalancer
+        app: blogsite-api-gateway-service-loadbalancer
     spec:
       containers:
-        - name: blog-site-service-registry-loadbalancer
-          image: piyushdubey1994/blog-site-service-registry:tagversion
+        - name: blogsite-api-gateway-service-loadbalancer
+          image: piyushdubey1994/blogsite-api-gateway-service:tagversion
           ports:
             - containerPort: 8081
 
@@ -29,7 +29,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: blog-site-service-registry-loadbalancer
+    app: blogsite-api-gateway-service-loadbalancer
   ports:
     - protocol: TCP
       port: 80
