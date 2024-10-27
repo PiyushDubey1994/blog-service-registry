@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-site-service-registry
+  labels:
+    app: blog-site-service-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-site-service-registry
+  template:
+    metadata:
+      labels:
+        app: blog-site-service-registry
+    spec:
+      containers:
+        - name: blog-site-service-registry
+          image: piyushdubey1994/blog-site-service-registry:tagversion
+          ports:
+            - containerPort: 8081
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-site-service-registry
+spec:
+  type: LoadBalancer
+  selector:
+    app: blog-site-service-registry
+  ports:
+    - protocol: TCP
+      port: 81
+      targetPort: 8081
