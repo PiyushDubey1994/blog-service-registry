@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,7 +18,7 @@ spec:
         - name: blogsite-service-registry
           image: piyushdubey1994/blogsite-service-registry:tagversion
           ports:
-            - containerPort: 8081
+            - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -32,5 +31,5 @@ spec:
     app: blogsite-service-registry
   ports:
     - protocol: TCP
-      port: 81
-      targetPort: 8081
+      port: 80
+      targetPort: 8080

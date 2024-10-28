@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: blogsite-service-registry-app-loadbalancer
-          image: piyushdubey1994/blogsite-service-registry
+          image: piyushdubey1994/blogsite-service-registry:tagversion
           ports:
             - containerPort: 8081
 
