@@ -2,14 +2,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blog-site-service-registry
+  name: blogsite-service-registry
   labels:
-    app: blog-site-service-registry
+    app: blogsite-service-registry
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: blog-site-service-registry
+      app: blogsite-service-registry
   template:
     metadata:
       labels:
