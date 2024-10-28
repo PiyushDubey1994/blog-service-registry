@@ -26,6 +26,6 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://localhost:8081/eureka/
+      defaultZone: http://34.45.202.104:81/eureka/
     instance:
       prefer-ip-address: true

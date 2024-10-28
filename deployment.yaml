@@ -18,7 +18,7 @@ spec:
         - name: blogsite-service-registry
           image: piyushdubey1994/blogsite-service-registry:tagversion
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
 
 ---
 apiVersion: v1
@@ -31,5 +31,5 @@ spec:
     app: blogsite-service-registry
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
+      port: 81
+      targetPort: 8081
